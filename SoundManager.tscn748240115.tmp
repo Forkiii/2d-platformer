@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://donwg43dta1hb"]
+
+[ext_resource type="Script" uid="uid://bbqsktv8pigi0" path="res://SoundManager.gd" id="1_exnwo"]
+[ext_resource type="AudioStream" uid="uid://dfusjg4w3yjnt" path="res://[Assets]/Audio/sfx_movement_footsteps.wav.wav" id="1_j2q8x"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_exnwo")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_j2q8x")
+
+[node name="footsteps_timer" type="Timer" parent="Footsteps"]
+wait_time = 0.3
+one_shot = true

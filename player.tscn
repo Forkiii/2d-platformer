@@ -1,0 +1,188 @@
+[gd_scene load_steps=26 format=3 uid="uid://cja6qvu0io7au"]
+
+[ext_resource type="Script" uid="uid://cbl0pvcqh0prb" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://onbw7darvgo3" path="res://PlayerMovementData.gd" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://dumumf8pf45rc" path="res://Sprites/Climb.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://dja3gjypybvim" path="res://Sprites/spritesheet.png" id="4_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bgmnom1vqc8yt" path="res://Sprites/Ippywalk-Sheet.png" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://nnfvfhjhfae6" path="res://Sprites/IppyJump-Sheet.png" id="4_sweqy"]
+[ext_resource type="AudioStream" uid="uid://carau086dhaon" path="res://[Assets]/Audio/footstep_1.wav" id="8_b26j0"]
+[ext_resource type="Script" uid="uid://c45bk7x8o82tk" path="res://sound_manager.gd" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://hl10dup4lm1y" path="res://[Assets]/Audio/footstep_2.wav" id="9_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://ems4aeti55vo" path="res://[Assets]/Audio/sfx_movement_jump.wav" id="10_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://berm4up3e853g" path="res://[Assets]/Audio/ost.wav" id="11_nvl01"]
+
+[sub_resource type="Resource" id="Resource_1jxqw"]
+script = ExtResource("2_2hs0m")
+speed = 100.0
+acceleration = 800.0
+friction = 1000.0
+jump_velocity = -250.0
+gravity_scale = 0.8
+air_resistance = 0.0
+air_acceleration = 400.0
+metadata/_custom_type_script = "uid://onbw7darvgo3"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
+atlas = ExtResource("3_2hs0m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("4_1jxqw")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("4_1jxqw")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("4_sweqy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("4_sweqy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("4_hqtel")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_634y6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwjto")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ivps1")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(11.4104, 19.5358)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(10, 15.7774)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0.135177, 0.201757)
+collision_layer = 2
+floor_constant_speed = true
+floor_snap_length = 2.0
+safe_margin = 0.2
+script = ExtResource("1_onrkg")
+movement_data = SubResource("Resource_1jxqw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -10)
+scale = Vector2(0.33215, 0.338301)
+sprite_frames = SubResource("SpriteFrames_634y6")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.963957, -9.96414)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="HazardDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
+position = Vector2(-1, -11.1113)
+shape = SubResource("RectangleShape2D_sweqy")
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("8_dw050")
+
+[node name="footstep_cooldown" type="Timer" parent="SoundManager"]
+wait_time = 0.16
+one_shot = true
+
+[node name="foot_one" type="AudioStreamPlayer2D" parent="SoundManager"]
+stream = ExtResource("8_b26j0")
+volume_db = -20.0
+
+[node name="foot_two" type="AudioStreamPlayer2D" parent="SoundManager"]
+stream = ExtResource("9_n7ghd")
+volume_db = -20.0
+
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="SoundManager"]
+stream = ExtResource("10_n7ghd")
+volume_db = -22.55
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="SoundManager"]
+process_mode = 1
+stream = ExtResource("11_nvl01")
+volume_db = -10.76
+autoplay = true
+max_distance = 4096.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="jump_animation_finished"]
+[connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
+[connection signal="finished" from="SoundManager/bgm" to="." method="_on_bgm_finished"]

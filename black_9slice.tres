@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://yucvgy1xhkmp"]
+
+[ext_resource type="Texture2D" uid="uid://d13kxy00apgce" path="res://[Assets]/Heart-Platformer-Godot-4-main/black_9slice.png" id="1_7tu82"]
+
+[resource]
+texture = ExtResource("1_7tu82")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
