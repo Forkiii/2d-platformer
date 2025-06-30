@@ -1,6 +1,6 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://yucvgy1xhkmp"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://0sauatcobooh"]
 
-[ext_resource type="Texture2D" uid="uid://d13kxy00apgce" path="res://[Assets]/Heart-Platformer-Godot-4-main/black_9slice.png" id="1_7tu82"]
+[ext_resource type="Texture2D" uid="uid://dwkved2nqjj45" path="res://[Assets]/black_9slice.png" id="1_7tu82"]
 
 [resource]
 texture = ExtResource("1_7tu82")

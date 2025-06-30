@@ -139,6 +139,7 @@ func update_animations(input_axis):
 		if(Input.is_action_pressed("ui_right")):
 			animated_sprite_2d.flip_h=(0)	
 	elif is_wall_sliding:
+		air_jump=true
 		animated_sprite_2d.play("climb")
 	else:
 		animated_sprite_2d.play("idle")
