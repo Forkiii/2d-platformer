@@ -19,82 +19,10 @@ metadata/_custom_type_script = "uid://onbw7darvgo3"
 
 [sub_resource type="Animation" id="Animation_mmc0l"]
 length = 3.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["3"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/StartIn:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/StartIn:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_tvydr"]
 resource_name = "countdown"
 length = 3.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 1.2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["3", "2", "1"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/StartIn:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2.2, 3.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/StartIn:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(3.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hwhj1"]
 _data = {
@@ -107,7 +35,7 @@ script = ExtResource("1_bah7m")
 metadata/_edit_vertical_guides_ = [55.0]
 
 [node name="Player" parent="." instance=ExtResource("2_bcbcq")]
-position = Vector2(0, 8)
+position = Vector2(-0.0603647, 0.181093)
 movement_data = SubResource("Resource_js7pq")
 
 [node name="TileMap" parent="." instance=ExtResource("7_wygdx")]
@@ -143,28 +71,6 @@ text = "RETRY"
 [node name="NextLevelButton" type="Button" parent="CanvasLayer/LevelCompleted/CenterContainer2/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "NEXT LEVEL"
-
-[node name="StartIn" type="ColorRect" parent="CanvasLayer"]
-unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/StartIn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StartInLabel" type="Label" parent="CanvasLayer/StartIn/CenterContainer"]
-layout_mode = 2
-text = "3"
-horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
 clip_contents = true

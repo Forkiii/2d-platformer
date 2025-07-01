@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dawp5ft2ayya7"]
+[gd_scene load_steps=3 format=3 uid="uid://dawp5ft2ayya7"]
 
+[ext_resource type="Script" uid="uid://dw2lmx0j2ipuf" path="res://start_menu.gd" id="1_ia0g5"]
 [ext_resource type="Script" uid="uid://b4wjmqddonffo" path="res://start_button.gd" id="1_jwbto"]
 
 [node name="StartMenu" type="MarginContainer"]
@@ -12,6 +13,7 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
+script = ExtResource("1_ia0g5")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 2
